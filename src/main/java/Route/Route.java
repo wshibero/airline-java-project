@@ -8,7 +8,7 @@ public class Route{
   private String originCountry;
   private String originContinent;
   private int cost;
-  public Route(String destTown, String destCountry, String destContinent, String originTown, String originCountry, String originContinent, int cost){
+  public Route(String originTown, String destTown, int cost, String originCountry, String destCountry,  String originContinent, String destContinent){
     this.destTown = destTown;
     this.destCountry = destCountry;
     this.destContinent = destContinent;
@@ -34,13 +34,29 @@ public class Route{
     private String originCountry;
     private String originContinent;
     private int cost;
-    public RouteBuilder(String destTown, String originTown, int cost){
+    public RouteBuilder(String originTown, String destTown, int cost){
       this.destTown = destTown;
       this.originTown = originTown;
       this.cost = cost;
     }
+    public RouteBuilder setDestCountry(String destCountry, String destContinent){
+      this.destCountry = destCountry;
+      this.destContinent = destContinent;
+      return this;
+    }
+    public RouteBuilder setOriginCountry(String originCountry, String originContinent){
+      this.originCountry = originCountry;
+      this.originContinent = originContinent;
+      return this;
+    }
     public Route build(){
       return new Route(this);
     }
+  }
+  public String toString(){
+    return 
+      "Origin Town: " + this.originTown +
+      "\nDestination Town: " + this.destTown +
+      "\nCost: " + this.cost;
   }
 }
