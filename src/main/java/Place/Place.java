@@ -1,6 +1,6 @@
-package Destination;
+package Place;
 
-public class Destination{
+public class Place{
   private String destTown;
   private String destCountry;
   private String destContinent;

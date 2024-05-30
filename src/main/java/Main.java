@@ -2,7 +2,7 @@
 
 // import org.junit.jupiter.api.Test;
 import Users.Users;
-import Destination.Destination;
+import Place.Place;
 
 public class Main {
   public static void main(String[] args) {
